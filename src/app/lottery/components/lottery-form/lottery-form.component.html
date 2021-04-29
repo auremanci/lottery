@@ -1,0 +1,35 @@
+<form class="row gy-2 gx-3 align-items-start"
+      [formGroup]="lotteryForm"
+      (ngSubmit)="save()">
+
+  <div class="col-8">
+
+    <div class="input-group has-validation">
+
+      <span class="input-group-text" id="inputGroupPrepend">€</span>
+  
+      <input  type="number" 
+              class="form-control" 
+              [ngClass]="{'is-invalid': isValid('price')}"
+              formControlName="price"
+              min="5"
+              id="validationPrice">
+
+      <div  class="invalid-feedback" 
+            id="validationPriceFeedback">
+        Minimum bet is 5€
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-4">
+    <button class="btn btn-primary w-100" 
+            type="submit"
+            [disabled]="lotteryForm.invalid || this.ticket.balls.length < 10">
+      Buy
+    </button>
+  </div>
+
+</form>

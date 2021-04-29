@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// MODULES
+import { LotteryModule } from './lottery/lottery.module';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +12,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    LotteryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
