@@ -58,7 +58,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/lottery/components/result-lottery/result-lottery.component.ts</code>
+    <code>src/app/pages/lottery/components/result-lottery/result-lottery.component.ts</code>
 </p>
 
 
@@ -104,33 +104,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-
-
-
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#lottery">lottery</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-        </tbody>
-    </table>
-</section>
 
     <section>
     <h3 id="constructor">Constructor</h3>
@@ -138,45 +111,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(lotteryService: <a href="../injectables/LotteryService.html">LotteryService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/lottery/components/result-lottery/result-lottery.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/pages/lottery/components/result-lottery/result-lottery.component.ts:7</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>lotteryService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/LotteryService.html" target="_self" >LotteryService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -187,42 +130,11 @@
 
 
 
-    <section>
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="lottery"></a>
-                        <span class="name"><b>lottery</b><a href="#lottery"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>lottery()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/lottery/components/result-lottery/result-lottery.component.ts:15</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-
-import { Lottery } from &#x27;../../models/lottery&#x27;;
-
-import { LotteryService } from &#x27;../../services/lottery.service&#x27;;
 
 @Component({
   selector: &#x27;app-result-lottery&#x27;,
@@ -230,11 +142,7 @@ import { LotteryService } from &#x27;../../services/lottery.service&#x27;;
 })
 export class ResultLotteryComponent {
 
-  constructor(private lotteryService: LotteryService) { }
-
-  get lottery(): Lottery {
-    return this.lotteryService.lotery;
-  }
+  constructor() { }
 
 }
 </code></pre>
@@ -249,27 +157,12 @@ export class ResultLotteryComponent {
 
   &lt;div class&#x3D;&quot;card-body p-3&quot;&gt;
 
-    &lt;div class&#x3D;&quot;text-center display-6&quot;&gt;
-      &lt;span class&#x3D;&quot;badge bg-success rounded-pill mx-1&quot;
-            *ngFor&#x3D;&quot;let ball of lottery.winningNumber&quot;&gt;
-        {{ ball }}
-      &lt;/span&gt;
-    &lt;/div&gt;
+    &lt;!-- Lottery winning number --&gt;
+    &lt;app-winning-number&gt;&lt;/app-winning-number&gt;
 
-    &lt;div class&#x3D;&quot;mt-3 display-6&quot;&gt;
-
-      &lt;div  class&#x3D;&quot;alert alert-success text-center&quot;
-            *ngIf&#x3D;&quot;lottery.hasWinner&quot;&gt;
-          &lt;p&gt;&lt;b&gt;Congratulations!!&lt;/b&gt; You have a prize of &lt;/p&gt;
-          &lt;p class&#x3D;&quot;display-5&quot;&gt;&lt;b&gt;{{ lottery.prize }}€&lt;/b&gt;&lt;/p&gt;
-      &lt;/div&gt;
-
-      &lt;div  class&#x3D;&quot;alert alert-danger&quot;
-            *ngIf&#x3D;&quot;!lottery.hasWinner&quot;&gt;
-          Sorry, you didn&#x27;t get a prize this time
-      &lt;/div&gt;
-
-    &lt;/div&gt;
+    &lt;!-- Message if you have won the lottery or not, and the prize --&gt;
+    &lt;app-message-end-lottery&gt;&lt;/app-message-end-lottery&gt;
+    
   &lt;/div&gt;
 
 &lt;/div&gt;</code></pre>
@@ -301,8 +194,8 @@ export class ResultLotteryComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card">  <h3 class="card-header bg-dark text-white">    Result of lottery  </h3>  <div class="card-body p-3">    <div class="text-center display-6">      <span class="badge bg-success rounded-pill mx-1"            *ngFor="let ball of lottery.winningNumber">        {{ ball }}      </span>    </div>    <div class="mt-3 display-6">      <div  class="alert alert-success text-center"            *ngIf="lottery.hasWinner">          <p><b>Congratulations!!</b> You have a prize of </p>          <p class="display-5"><b>{{ lottery.prize }}€</b></p>      </div>      <div  class="alert alert-danger"            *ngIf="!lottery.hasWinner">          Sorry, you didn\'t get a prize this time      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'BetSlipComponent', 'selector': 'app-bet-slip'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'}];
+        var COMPONENT_TEMPLATE = '<div><div class="card">  <h3 class="card-header bg-dark text-white">    Result of lottery  </h3>  <div class="card-body p-3">    <!-- Lottery winning number -->    <app-winning-number></app-winning-number>    <!-- Message if you have won the lottery or not, and the prize -->    <app-message-end-lottery></app-message-end-lottery>      </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'ButtonsEndLotteryComponent', 'selector': 'app-buttons-end-lottery'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'MessageEndLotteryComponent', 'selector': 'app-message-end-lottery'},{'name': 'NumbersComponent', 'selector': 'app-numbers'},{'name': 'ResetTicketComponent', 'selector': 'app-reset-ticket'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'},{'name': 'TicketComponent', 'selector': 'app-ticket'},{'name': 'WinningNumberComponent', 'selector': 'app-winning-number'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ResultLotteryComponent'};
 </script>

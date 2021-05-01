@@ -1,0 +1,17 @@
+<div  class="d-grid gap-2">
+
+  <!-- Button that starts the draw -->
+  <button class="btn btn-primary"
+          (click)="placeBet()"
+          [disabled]="lottery.tickets.length === 0">
+    Place bet
+  </button>
+
+  <!-- Button that restarts the draw -->
+  <button class="btn btn-danger"
+          (click)="resetLottery()"
+          [disabled]="lottery.tickets.length === 0">
+    Reset lottery
+  </button>
+  
+</div>

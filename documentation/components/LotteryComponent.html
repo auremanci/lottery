@@ -58,7 +58,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/lottery/lottery-page/lottery.component.ts</code>
+    <code>src/app/pages/lottery/lottery-page/lottery.component.ts</code>
 </p>
 
 
@@ -143,7 +143,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/lottery/lottery-page/lottery.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/pages/lottery/lottery-page/lottery.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -207,7 +207,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/lottery/lottery-page/lottery.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/lottery/lottery-page/lottery.component.ts:15</a></div>
                                 </td>
                             </tr>
 
@@ -222,19 +222,20 @@
 
 import { Lottery } from &#x27;../models/lottery&#x27;;
 
-import { LotteryService } from &#x27;../services/lottery.service&#x27;;
+import { LotteryService } from &#x27;../services/lottery/lottery.service&#x27;;
 
 @Component({
   selector: &#x27;app-lottery&#x27;,
   templateUrl: &#x27;./lottery.component.html&#x27;
 })
 export class LotteryComponent {
-
-  constructor(private lotterService: LotteryService) { }
+ 
+  constructor(private lotterService: LotteryService) {}
 
   get lottery(): Lottery {
     return this.lotterService.lotery;
   }
+
 }
 </code></pre>
     </div>
@@ -242,21 +243,25 @@ export class LotteryComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
 
+  &lt;!-- Card with the list of balls to add to the ticket --&gt;
   &lt;div  class&#x3D;&quot;col-md-3 col-sm mb-3&quot; 
         *ngIf&#x3D;&quot;!lottery.finished&quot;&gt;
-      &lt;app-ball-selector&gt;&lt;/app-ball-selector&gt;
+      &lt;app-numbers&gt;&lt;/app-numbers&gt;
   &lt;/div&gt;
 
+  &lt;!-- Card to buy the ticket --&gt;
   &lt;div  class&#x3D;&quot;col-md-4 col-sm mb-3&quot; 
         *ngIf&#x3D;&quot;!lottery.finished&quot;&gt;
-    &lt;app-bet-slip&gt;&lt;/app-bet-slip&gt;
+    &lt;app-ticket&gt;&lt;/app-ticket&gt;
   &lt;/div&gt;
   
+  &lt;!-- Card with the lottery result --&gt;
   &lt;div  class&#x3D;&quot;col-md-7 col-sm mb-3&quot; 
         *ngIf&#x3D;&quot;lottery.finished&quot;&gt;
-    &lt;app-result-lottery&gt;&lt;/app-result-lottery&gt;
+      &lt;app-result-lottery&gt;&lt;/app-result-lottery&gt;
   &lt;/div&gt;
 
+  &lt;!-- Card with the list of tickets and the buttons to end and reset the lottery --&gt;
   &lt;div class&#x3D;&quot;col-md-5 col-sm mb-3&quot;&gt;
     &lt;app-list-tickets&gt;&lt;/app-list-tickets&gt;
   &lt;/div&gt;
@@ -291,8 +296,8 @@ export class LotteryComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row">  <div  class="col-md-3 col-sm mb-3"         *ngIf="!lottery.finished">      <app-ball-selector></app-ball-selector>  </div>  <div  class="col-md-4 col-sm mb-3"         *ngIf="!lottery.finished">    <app-bet-slip></app-bet-slip>  </div>    <div  class="col-md-7 col-sm mb-3"         *ngIf="lottery.finished">    <app-result-lottery></app-result-lottery>  </div>  <div class="col-md-5 col-sm mb-3">    <app-list-tickets></app-list-tickets>  </div>  </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'BetSlipComponent', 'selector': 'app-bet-slip'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'}];
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <!-- Card with the list of balls to add to the ticket -->  <div  class="col-md-3 col-sm mb-3"         *ngIf="!lottery.finished">      <app-numbers></app-numbers>  </div>  <!-- Card to buy the ticket -->  <div  class="col-md-4 col-sm mb-3"         *ngIf="!lottery.finished">    <app-ticket></app-ticket>  </div>    <!-- Card with the lottery result -->  <div  class="col-md-7 col-sm mb-3"         *ngIf="lottery.finished">      <app-result-lottery></app-result-lottery>  </div>  <!-- Card with the list of tickets and the buttons to end and reset the lottery -->  <div class="col-md-5 col-sm mb-3">    <app-list-tickets></app-list-tickets>  </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'ButtonsEndLotteryComponent', 'selector': 'app-buttons-end-lottery'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'MessageEndLotteryComponent', 'selector': 'app-message-end-lottery'},{'name': 'NumbersComponent', 'selector': 'app-numbers'},{'name': 'ResetTicketComponent', 'selector': 'app-reset-ticket'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'},{'name': 'TicketComponent', 'selector': 'app-ticket'},{'name': 'WinningNumberComponent', 'selector': 'app-winning-number'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LotteryComponent'};
 </script>

@@ -1,0 +1,15 @@
+<div class="d-xl-flex align-items-center">
+
+  <!-- List of balls added to the ticket -->
+  <span *ngFor="let ball of ticket.balls"
+        class="badge rounded-pill bg-primary mx-1">
+    {{ ball }}
+  </span>
+
+  <!-- List of remaining balls on the ticket -->
+  <span *ngFor="let ball of [].constructor(10 - ticket.balls.length); let i = index"
+        class="badge rounded-pill bg-secondary mx-1">
+    &nbsp;
+  </span>
+
+</div>

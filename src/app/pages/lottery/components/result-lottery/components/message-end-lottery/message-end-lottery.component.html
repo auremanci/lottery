@@ -1,0 +1,16 @@
+<div class="mt-3 display-6">
+
+  <!-- Message if you have won the lottery and the prize -->
+  <div  class="alert alert-success text-center"
+        *ngIf="lottery.hasWinner">
+      <p><b>Congratulations!!</b> You have a prize of </p>
+      <p class="display-5"><b>{{ lottery.prize }}€</b></p>
+  </div>
+
+  <!-- Message if you have not won the lottery -->
+  <div  class="alert alert-danger"
+        *ngIf="!lottery.hasWinner">
+      Sorry, you didn't get a prize this time
+  </div>
+
+</div>

@@ -58,7 +58,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/lottery/components/lottery-form/lottery-form.component.ts</code>
+    <code>src/app/pages/lottery/components/ticket/components/lottery-form/lottery-form.component.ts</code>
 </p>
 
 
@@ -169,12 +169,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(lotteryService: <a href="../injectables/LotteryService.html">LotteryService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(lotteryService: <a href="../injectables/LotteryService.html">LotteryService</a>, lotteryFormService: <a href="../injectables/LotteryFormService.html">LotteryFormService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/lottery/components/lottery-form/lottery-form.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/lottery/components/ticket/components/lottery-form/lottery-form.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -204,10 +204,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>fb</td>
+                                                        <td>lotteryFormService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                                        <code><a href="../injectables/LotteryFormService.html" target="_self" >LotteryFormService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -255,8 +255,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/lottery/components/lottery-form/lottery-form.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/pages/lottery/components/ticket/components/lottery-form/lottery-form.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -272,6 +272,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -286,6 +287,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>: Form field to evaluate</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -297,7 +302,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>If the field contains errors and has been touched</p>
+
                     </div>
                 </td>
             </tr>
@@ -325,14 +331,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/lottery/components/lottery-form/lottery-form.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/pages/lottery/components/ticket/components/lottery-form/lottery-form.component.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See if the form is invalid, and if it does not call the service to save the ticket 
+and put the price back to 5</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -366,22 +375,9 @@
 
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>this.fb.group({
-    price: [ 
-                5, 
-                [
-                  Validators.required,
-                  Validators.min(5)
-                ] 
-              ]
-  })</code>
-                        </td>
-                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/lottery/components/lottery-form/lottery-form.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/lottery/components/ticket/components/lottery-form/lottery-form.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -410,7 +406,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/lottery/components/lottery-form/lottery-form.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/lottery/components/ticket/components/lottery-form/lottery-form.component.ts:24</a></div>
                                 </td>
                             </tr>
 
@@ -422,11 +418,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { FormGroup } from &#x27;@angular/forms&#x27;;
 
-import { Ticket } from &#x27;../../models/ticket&#x27;;
+import { Ticket } from &#x27;../../../../models/ticket&#x27;;
 
-import { LotteryService } from &#x27;../../services/lottery.service&#x27;;
+import { LotteryService } from &#x27;../../../../services/lottery/lottery.service&#x27;;
+import { LotteryFormService } from &#x27;../../services/lottery-form/lottery-form.service&#x27;;
 
 @Component({
   selector: &#x27;app-lottery-form&#x27;,
@@ -434,31 +431,33 @@ import { LotteryService } from &#x27;../../services/lottery.service&#x27;;
 })
 export class LotteryFormComponent {
 
+  lotteryForm: FormGroup;
+
   constructor(
     private lotteryService: LotteryService,
-    private fb: FormBuilder
-  ) { }
+    private lotteryFormService : LotteryFormService
+  ) {
+    this.lotteryForm &#x3D; lotteryFormService.lotteryForm;
+  }
 
   get ticket(): Ticket {
     return this.lotteryService.ticket;
   }
 
-  lotteryForm: FormGroup &#x3D; this.fb.group({
-    price: [ 
-                5, 
-                [
-                  Validators.required,
-                  Validators.min(5)
-                ] 
-              ]
-  });
-
+  /**
+   * @param {string} value : Form field to evaluate
+   * @returns {boolean | null} If the field contains errors and has been touched
+   */
   isValid( value: string ): boolean | null {
-    return  this.lotteryForm.controls[value].errors &amp;&amp; 
-            this.lotteryForm.controls[value].touched;
+    return  this.lotteryFormService.isValid( value );
   }
 
+  /**
+   * See if the form is invalid, and if it does not call the service to save the ticket 
+   * and put the price back to 5
+   */
   save(): void {
+    // If the form is invalid, mark all the inputs as touched so that the error messages appear
     if( this.lotteryForm.invalid ) {
       this.lotteryForm.markAllAsTouched();
       return;
@@ -480,7 +479,8 @@ export class LotteryFormComponent {
     &lt;div class&#x3D;&quot;input-group has-validation&quot;&gt;
 
       &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;inputGroupPrepend&quot;&gt;€&lt;/span&gt;
-  
+      
+      &lt;!-- Input with the ticket price --&gt;
       &lt;input  type&#x3D;&quot;number&quot; 
               class&#x3D;&quot;form-control&quot; 
               [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: isValid(&#x27;price&#x27;)}&quot;
@@ -488,6 +488,7 @@ export class LotteryFormComponent {
               min&#x3D;&quot;5&quot;
               id&#x3D;&quot;validationPrice&quot;&gt;
 
+      &lt;!-- Error message if input is invalid --&gt;
       &lt;div  class&#x3D;&quot;invalid-feedback&quot; 
             id&#x3D;&quot;validationPriceFeedback&quot;&gt;
         Minimum bet is 5€
@@ -497,6 +498,7 @@ export class LotteryFormComponent {
 
   &lt;/div&gt;
 
+  &lt;!-- Button that saves the ticket --&gt;
   &lt;div class&#x3D;&quot;col-4&quot;&gt;
     &lt;button class&#x3D;&quot;btn btn-primary w-100&quot; 
             type&#x3D;&quot;submit&quot;
@@ -534,8 +536,8 @@ export class LotteryFormComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form class="row gy-2 gx-3 align-items-start"      [formGroup]="lotteryForm"      (ngSubmit)="save()">  <div class="col-8">    <div class="input-group has-validation">      <span class="input-group-text" id="inputGroupPrepend">€</span>        <input  type="number"               class="form-control"               [ngClass]="{\'is-invalid\': isValid(\'price\')}"              formControlName="price"              min="5"              id="validationPrice">      <div  class="invalid-feedback"             id="validationPriceFeedback">        Minimum bet is 5€      </div>    </div>  </div>  <div class="col-4">    <button class="btn btn-primary w-100"             type="submit"            [disabled]="lotteryForm.invalid || this.ticket.balls.length < 10">      Buy    </button>  </div></form></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'BetSlipComponent', 'selector': 'app-bet-slip'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'}];
+        var COMPONENT_TEMPLATE = '<div><form class="row gy-2 gx-3 align-items-start"      [formGroup]="lotteryForm"      (ngSubmit)="save()">  <div class="col-8">    <div class="input-group has-validation">      <span class="input-group-text" id="inputGroupPrepend">€</span>            <!-- Input with the ticket price -->      <input  type="number"               class="form-control"               [ngClass]="{\'is-invalid\': isValid(\'price\')}"              formControlName="price"              min="5"              id="validationPrice">      <!-- Error message if input is invalid -->      <div  class="invalid-feedback"             id="validationPriceFeedback">        Minimum bet is 5€      </div>    </div>  </div>  <!-- Button that saves the ticket -->  <div class="col-4">    <button class="btn btn-primary w-100"             type="submit"            [disabled]="lotteryForm.invalid || this.ticket.balls.length < 10">      Buy    </button>  </div></form></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'ButtonsEndLotteryComponent', 'selector': 'app-buttons-end-lottery'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'MessageEndLotteryComponent', 'selector': 'app-message-end-lottery'},{'name': 'NumbersComponent', 'selector': 'app-numbers'},{'name': 'ResetTicketComponent', 'selector': 'app-reset-ticket'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'},{'name': 'TicketComponent', 'selector': 'app-ticket'},{'name': 'WinningNumberComponent', 'selector': 'app-winning-number'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LotteryFormComponent'};
 </script>

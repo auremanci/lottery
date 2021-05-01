@@ -1,0 +1,22 @@
+<!-- List of all tickets in this lottery -->
+<ul class="list-group list-group-flush">
+  <li class="list-group-item" 
+      *ngFor="let ticket of lottery.tickets">
+
+      <b>Numbers:</b>
+      <br>
+      
+      <!-- List of balls on this ticket -->
+      <span class="badge bg-success rounded-pill mx-1"
+            *ngFor="let ball of ticket.balls">
+        {{ ball }}
+      </span>
+
+      <!-- Ticket price -->
+      <p class="mt-3">
+        <b>Price: </b>
+        <span class="display-6">{{ ticket.price }}€</span>
+      </p>
+
+  </li>
+</ul>

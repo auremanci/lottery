@@ -1,0 +1,6 @@
+<!-- List of balls to add to the ticket -->
+<button *ngFor="let ball of [].constructor(10); let i = index"
+        class="btn rounded-pill m-2 btn-outline-primary" 
+        (click)="addBall(i)">
+  {{i}}
+</button>

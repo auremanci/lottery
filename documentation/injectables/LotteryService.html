@@ -56,7 +56,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/lottery/services/lottery.service.ts</code>
+            <code>src/app/pages/lottery/services/lottery/lottery.service.ts</code>
         </p>
 
 
@@ -131,15 +131,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(lotteryFormService: <a href="../injectables/LotteryFormService.html">LotteryFormService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/lottery/services/lottery.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>lotteryFormService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LotteryFormService.html" target="_self" >LotteryFormService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -171,14 +201,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:25</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Add a ball to the current ticket</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -241,8 +273,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:82</a></div>
                 </td>
             </tr>
 
@@ -295,7 +327,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>: Random number between a maximum number and a minimum number</p>
+
                     </div>
                 </td>
             </tr>
@@ -323,14 +356,21 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:53</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Finalize the lottery with the following steps:</p>
+<ul>
+<li>Create a random lottery winning number.</li>
+<li>See if there is a ticket that has the same combination of numbers as the random one.</li>
+<li>Insert the values depending on whether there is a winner or not.</li>
+</ul>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -362,14 +402,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:89</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Reset the lottery and the current ticket</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -401,14 +443,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Reset the ticket and set the default values to the form</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -440,14 +484,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:41</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Save the ticket with the indicated price and reset the ticket</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -510,17 +556,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/lottery/services/lottery.service.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:73</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Look for a ticket that has the same number combination as the lottery winner.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Ticket.html" target="_self" >Ticket | undefined</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>: If he finds a winner, he returns the ticket and if not, indefinite</p>
 
                     </div>
                 </td>
@@ -553,7 +607,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/lottery/services/lottery.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -580,7 +634,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/lottery/services/lottery.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/pages/lottery/services/lottery/lottery.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -594,8 +648,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { Lottery } from &#x27;../models/lottery&#x27;;
-import { Ticket } from &#x27;../models/ticket&#x27;;
+
+import { LotteryFormService } from &#x27;../../components/ticket/services/lottery-form/lottery-form.service&#x27;;
+
+import { Lottery } from &#x27;../../models/lottery&#x27;;
+import { Ticket } from &#x27;../../models/ticket&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -605,29 +662,47 @@ export class LotteryService {
   ticket: Ticket;
   lotery: Lottery;
   
-  constructor() {
+  constructor(private lotteryFormService: LotteryFormService) {
     this.ticket &#x3D; new Ticket();
     this.lotery &#x3D; new Lottery();
   }
 
+  /**
+   * Add a ball to the current ticket
+   * @param {number} ball
+   */
   addBall(ball: number): void {
     this.ticket.balls.push(ball);
   }
 
+  /**
+   * Reset the ticket and set the default values to the form
+   */
   resetTicket(): void {
     this.ticket &#x3D; new Ticket();
+    this.lotteryFormService.setDefaultValue();
   }
 
+  /**
+   * Save the ticket with the indicated price and reset the ticket
+   * @param {number} price 
+   */
   save(price: number): void {
     this.ticket.price &#x3D; price;
     this.lotery.tickets.push(this.ticket);
     this.resetTicket();
   }
 
+  /**
+   * Finalize the lottery with the following steps:
+   * - Create a random lottery winning number.
+   * - See if there is a ticket that has the same combination of numbers as the random one.
+   * - Insert the values depending on whether there is a winner or not.
+   */
   placeBet(): void {
 
     for (let i &#x3D; 0; i &lt; 10; i++) {
-      this.lotery.winningNumber.push(this.getRandomInt(0,9));
+      this.lotery.prize.winningNumber.push(this.getRandomInt(0,9));
     }
     
     this.lotery.finished &#x3D; true;
@@ -635,21 +710,34 @@ export class LotteryService {
 
     if(winner !&#x3D;&#x3D; undefined) {
       this.lotery.hasWinner &#x3D; true;
-      this.lotery.prize &#x3D; winner.price * 1.5;
+      this.lotery.prize.prize &#x3D; winner.price * 1.5;
     }
 
   }
 
+  /**
+   * Look for a ticket that has the same number combination as the lottery winner.
+   * @returns {Ticket | undefined}: If he finds a winner, he returns the ticket and if not, indefinite
+   */
   winner(): Ticket | undefined {
-    return this.lotery.tickets.find((ticket) &#x3D;&gt; JSON.stringify(ticket.balls) &#x3D;&#x3D;&#x3D; JSON.stringify(this.lotery.winningNumber));
+    return this.lotery.tickets.find((ticket) &#x3D;&gt; JSON.stringify(ticket.balls) &#x3D;&#x3D;&#x3D; JSON.stringify(this.lotery.prize.winningNumber));
   }
 
+  /**
+   * @param {number} min 
+   * @param {number} max 
+   * @returns {number}: Random number between a maximum number and a minimum number
+   */
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
+  /**
+   * Reset the lottery and the current ticket
+   */
   resetLottery(): void {
     this.lotery &#x3D; new Lottery();
+    this.resetTicket();
   }
 
 }

@@ -58,7 +58,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/lottery/components/balls-ticket/balls-ticket.component.ts</code>
+    <code>src/app/pages/lottery/components/ticket/components/balls-ticket/balls-ticket.component.ts</code>
 </p>
 
 
@@ -109,20 +109,6 @@
     <table class="table table-sm table-bordered index-table">
         <tbody>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#resetTicket">resetTicket</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -157,7 +143,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/lottery/components/balls-ticket/balls-ticket.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/pages/lottery/components/ticket/components/balls-ticket/balls-ticket.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -199,51 +185,7 @@
 
 
 
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="resetTicket"></a>
-                    <span class="name">
-                        <b>
-                            resetTicket
-                        </b>
-                        <a href="#resetTicket"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>resetTicket()</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/lottery/components/balls-ticket/balls-ticket.component.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
     <section>
     <h3 id="accessors">
@@ -265,7 +207,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/lottery/components/balls-ticket/balls-ticket.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/lottery/components/ticket/components/balls-ticket/balls-ticket.component.ts:15</a></div>
                                 </td>
                             </tr>
 
@@ -278,9 +220,9 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
-import { Ticket } from &#x27;../../models/ticket&#x27;;
+import { Ticket } from &#x27;../../../../models/ticket&#x27;;
 
-import { LotteryService } from &#x27;../../services/lottery.service&#x27;;
+import { LotteryService } from &#x27;../../../../services/lottery/lottery.service&#x27;;
 
 @Component({
   selector: &#x27;app-balls-ticket&#x27;,
@@ -294,38 +236,26 @@ export class BallsTicketComponent {
     return this.lotteryService.ticket;
   }
 
-  resetTicket(): void {
-    this.lotteryService.resetTicket();
-  }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex justify-content-between mb-2&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-xl-flex align-items-center&quot;&gt;
 
-  &lt;div class&#x3D;&quot;d-xl-flex align-items-center&quot;&gt;
+  &lt;!-- List of balls added to the ticket --&gt;
+  &lt;span *ngFor&#x3D;&quot;let ball of ticket.balls&quot;
+        class&#x3D;&quot;badge rounded-pill bg-primary mx-1&quot;&gt;
+    {{ ball }}
+  &lt;/span&gt;
 
-    &lt;span *ngFor&#x3D;&quot;let ball of ticket.balls&quot;
-          class&#x3D;&quot;badge rounded-pill bg-primary mx-1&quot;&gt;
-      {{ ball }}
-    &lt;/span&gt;
-    &lt;span *ngFor&#x3D;&quot;let ball of [].constructor(10 - ticket.balls.length); let i &#x3D; index&quot;
-          class&#x3D;&quot;badge rounded-pill bg-secondary mx-1&quot;&gt;
-      &amp;nbsp;
-    &lt;/span&gt;
+  &lt;!-- List of remaining balls on the ticket --&gt;
+  &lt;span *ngFor&#x3D;&quot;let ball of [].constructor(10 - ticket.balls.length); let i &#x3D; index&quot;
+        class&#x3D;&quot;badge rounded-pill bg-secondary mx-1&quot;&gt;
+    &amp;nbsp;
+  &lt;/span&gt;
 
-  &lt;/div&gt;
-
-  &lt;button class&#x3D;&quot;btn btn-danger&quot;
-          (click)&#x3D;&quot;resetTicket()&quot;&gt;
-    &lt;i class&#x3D;&quot;bi bi-trash-fill&quot;&gt;&lt;/i&gt;
-  &lt;/button&gt;
-
-&lt;/div&gt;
-
-&lt;span class&#x3D;&quot;badge bg-info&quot; *ngIf&#x3D;&quot;ticket.balls.length &lt; 10&quot;&gt;You need to select 10 balls&lt;/span&gt;</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
 
@@ -354,8 +284,8 @@ export class BallsTicketComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="d-flex justify-content-between mb-2">  <div class="d-xl-flex align-items-center">    <span *ngFor="let ball of ticket.balls"          class="badge rounded-pill bg-primary mx-1">      {{ ball }}    </span>    <span *ngFor="let ball of [].constructor(10 - ticket.balls.length); let i = index"          class="badge rounded-pill bg-secondary mx-1">      &nbsp;    </span>  </div>  <button class="btn btn-danger"          (click)="resetTicket()">    <i class="bi bi-trash-fill"></i>  </button></div><span class="badge bg-info" *ngIf="ticket.balls.length < 10">You need to select 10 balls</span></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'BetSlipComponent', 'selector': 'app-bet-slip'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'}];
+        var COMPONENT_TEMPLATE = '<div><div class="d-xl-flex align-items-center">  <!-- List of balls added to the ticket -->  <span *ngFor="let ball of ticket.balls"        class="badge rounded-pill bg-primary mx-1">    {{ ball }}  </span>  <!-- List of remaining balls on the ticket -->  <span *ngFor="let ball of [].constructor(10 - ticket.balls.length); let i = index"        class="badge rounded-pill bg-secondary mx-1">    &nbsp;  </span></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BallSelectorComponent', 'selector': 'app-ball-selector'},{'name': 'BallsTicketComponent', 'selector': 'app-balls-ticket'},{'name': 'ButtonsEndLotteryComponent', 'selector': 'app-buttons-end-lottery'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'ListTicketsComponent', 'selector': 'app-list-tickets'},{'name': 'LotteryComponent', 'selector': 'app-lottery'},{'name': 'LotteryFormComponent', 'selector': 'app-lottery-form'},{'name': 'MessageEndLotteryComponent', 'selector': 'app-message-end-lottery'},{'name': 'NumbersComponent', 'selector': 'app-numbers'},{'name': 'ResetTicketComponent', 'selector': 'app-reset-ticket'},{'name': 'ResultLotteryComponent', 'selector': 'app-result-lottery'},{'name': 'TicketComponent', 'selector': 'app-ticket'},{'name': 'WinningNumberComponent', 'selector': 'app-winning-number'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BallsTicketComponent'};
 </script>
