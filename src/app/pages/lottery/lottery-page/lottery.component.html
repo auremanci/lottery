@@ -1,11 +1,5 @@
 <div class="row">
 
-  <!-- Card with the list of balls to add to the ticket -->
-  <div  class="col-md-3 col-sm mb-3" 
-        *ngIf="!lottery.finished">
-      <app-numbers></app-numbers>
-  </div>
-
   <!-- Card to buy the ticket -->
   <div  class="col-md-4 col-sm mb-3" 
         *ngIf="!lottery.finished">
@@ -19,7 +13,7 @@
   </div>
 
   <!-- Card with the list of tickets and the buttons to end and reset the lottery -->
-  <div class="col-md-5 col-sm mb-3">
+  <div class="col mb-3">
     <app-list-tickets></app-list-tickets>
   </div>
   

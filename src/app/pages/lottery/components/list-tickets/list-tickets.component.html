@@ -8,6 +8,8 @@
     <!-- Contains the buttons to end and reset the lottery -->
     <app-buttons-end-lottery></app-buttons-end-lottery>
 
+    <hr *ngIf="lottery.tickets.length > 0">
+
     <!-- List of all tickets in this lottery -->
     <app-list></app-list>
   </div>

@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 // COMPONENTS
 import { TicketComponent } from './ticket.component';
+import { BallSelectorComponent } from './components/ball-selector/ball-selector.component';
 import { BallsTicketComponent } from './components/balls-ticket/balls-ticket.component';
 import { LotteryFormComponent } from './components/lottery-form/lottery-form.component';
 import { ResetTicketComponent } from './components/reset-ticket/reset-ticket.component';
@@ -18,6 +19,7 @@ import { LotteryFormService } from './services/lottery-form/lottery-form.service
   ],
   declarations: [ 
     TicketComponent,
+    BallSelectorComponent,
     BallsTicketComponent,
     LotteryFormComponent,
     ResetTicketComponent
