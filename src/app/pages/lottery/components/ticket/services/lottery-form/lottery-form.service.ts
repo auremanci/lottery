@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LotteryFormService {
 
   lotteryForm: FormGroup = this.fb.group({
@@ -19,13 +17,13 @@ export class LotteryFormService {
    * @param {string} value : Form field to evaluate
    * @returns {boolean | null} If the field contains errors and has been touched
    */
-  isValid( value: string ): boolean | null {
+  isInValid( value: string ): boolean | null {
     return  this.lotteryForm.controls[value].errors && 
             this.lotteryForm.controls[value].touched;
   }
 
   /**
-   * Sets the default values of the form
+   * Sets the default value to the price field
    */
   setDefaultValue(): void {
     this.lotteryForm.get('price')?.setValue(5);

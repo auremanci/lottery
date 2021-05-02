@@ -11,11 +11,11 @@ import { Ticket } from '../../models/ticket';
 export class LotteryService {
 
   ticket: Ticket;
-  lotery: Lottery;
+  lottery: Lottery;
   
   constructor(private lotteryFormService: LotteryFormService) {
     this.ticket = new Ticket();
-    this.lotery = new Lottery();
+    this.lottery = new Lottery();
   }
 
   /**
@@ -38,9 +38,9 @@ export class LotteryService {
    * Save the ticket with the indicated price and reset the ticket
    * @param {number} price 
    */
-  save(price: number): void {
+  saveTicket( price: number ): void {
     this.ticket.price = price;
-    this.lotery.tickets.push(this.ticket);
+    this.lottery.tickets.push( this.ticket );
     this.resetTicket();
   }
 
@@ -52,16 +52,16 @@ export class LotteryService {
    */
   placeBet(): void {
 
-    for (let i = 0; i < 10; i++) {
-      this.lotery.prize.winningNumber.push(this.getRandomInt(0,9));
+    for ( let i = 0; i < 10; i++ ) {
+      this.lottery.prize.winningNumber.push( this.getRandomInt( 0,9 ) );
     }
     
-    this.lotery.finished = true;
+    this.lottery.finished = true;
     const winner = this.winner();
 
-    if(winner !== undefined) {
-      this.lotery.hasWinner = true;
-      this.lotery.prize.prize = winner.price * 1.5;
+    if( winner !== undefined ) {
+      this.lottery.hasWinner = true;
+      this.lottery.prize.prize = winner.price * 1.5;
     }
 
   }
@@ -71,7 +71,7 @@ export class LotteryService {
    * @returns {Ticket | undefined}: If he finds a winner, he returns the ticket and if not, indefinite
    */
   winner(): Ticket | undefined {
-    return this.lotery.tickets.find((ticket) => JSON.stringify(ticket.balls) === JSON.stringify(this.lotery.prize.winningNumber));
+    return this.lottery.tickets.find(( ticket ) => JSON.stringify( ticket.balls ) === JSON.stringify( this.lottery.prize.winningNumber ) );
   }
 
   /**
@@ -79,7 +79,7 @@ export class LotteryService {
    * @param {number} max 
    * @returns {number}: Random number between a maximum number and a minimum number
    */
-  getRandomInt(min: number, max: number): number {
+  getRandomInt( min: number, max: number ): number {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
@@ -87,7 +87,7 @@ export class LotteryService {
    * Reset the lottery and the current ticket
    */
   resetLottery(): void {
-    this.lotery = new Lottery();
+    this.lottery = new Lottery();
     this.resetTicket();
   }
 

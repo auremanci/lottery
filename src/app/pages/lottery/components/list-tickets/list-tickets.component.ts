@@ -15,7 +15,7 @@ export class ListTicketsComponent {
   constructor(private lotteryService: LotteryService) { }
 
   get lottery(): Lottery {
-    return this.lotteryService.lotery;
+    return this.lotteryService.lottery;
   }
 
 }

@@ -27,23 +27,23 @@ export class LotteryFormComponent {
 
   /**
    * @param {string} value : Form field to evaluate
-   * @returns {boolean | null} If the field contains errors and has been touched
+   * @returns {boolean} If the field contains errors and has been touched
    */
-  isValid( value: string ): boolean | null {
-    return  this.lotteryFormService.isValid( value );
+  isInValid( value: string ): boolean | null {
+    return  this.lotteryFormService.isInValid( value );
   }
 
   /**
    * See if the form is invalid, and if it does not call the service to save the ticket 
    * and put the price back to 5
    */
-  save(): void {
+  saveTicket(): void {
     // If the form is invalid, mark all the inputs as touched so that the error messages appear
     if( this.lotteryForm.invalid ) {
       this.lotteryForm.markAllAsTouched();
       return;
     }
 
-    this.lotteryService.save(this.lotteryForm.value.price);
+    this.lotteryService.saveTicket(this.lotteryForm.value.price);
   }  
 }

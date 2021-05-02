@@ -1,6 +1,6 @@
 <form class="row gy-2 gx-3 align-items-start"
       [formGroup]="lotteryForm"
-      (ngSubmit)="save()">
+      (ngSubmit)="saveTicket()">
 
   <div class="col-8">
 
@@ -11,7 +11,7 @@
       <!-- Input with the ticket price -->
       <input  type="number" 
               class="form-control" 
-              [ngClass]="{'is-invalid': isValid('price')}"
+              [ngClass]="{'is-invalid': isInValid('price')}"
               formControlName="price"
               min="5"
               id="validationPrice">

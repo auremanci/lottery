@@ -13,7 +13,7 @@ export class ButtonsEndLotteryComponent {
   constructor(private lotteryService: LotteryService) { }
 
   get lottery(): Lottery {
-    return this.lotteryService.lotery;
+    return this.lotteryService.lottery;
   }
 
   /**
