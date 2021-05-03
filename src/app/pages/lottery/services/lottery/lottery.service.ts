@@ -39,7 +39,7 @@ export class LotteryService {
    * @param {number} price 
    */
   saveTicket( price: number ): void {
-    this.ticket.price = price;
+    this.ticket.price = Math.round((price + Number.EPSILON) * 100) / 100;
     this.lottery.tickets.push( this.ticket );
     this.resetTicket();
   }
